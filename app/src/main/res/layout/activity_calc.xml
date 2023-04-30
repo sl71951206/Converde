@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalcActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CALCULADORA ENERGÉTICA"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/converde"
+                android:textAlignment="center"
+                android:layout_marginVertical="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:gravity="center_horizontal">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="Color"
+                    app:chipIcon="@drawable/baseline_palette_24" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:id="@+id/tilEtiqueta"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/baseline_emoji_objects_24"
+                    app:endIconTint="@color/converde"
+                    app:endIconCheckable="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tilEtiquetaNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Etiqueta" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/baseline_electrical_services_24"
+                                android:layout_margin="5dp"
+                                android:id="@+id/imageView"
+                                android:contentDescription="potencia" />
+
+                            <TextView
+                                android:id="@+id/textView1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Potencia"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_margin="5dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center">
+
+                                <EditText
+                                    android:id="@+id/edtPotencia"
+                                    android:layout_width="50dp"
+                                    android:layout_height="48dp"
+                                    android:ems="10"
+                                    android:hint="0"
+                                    android:inputType="numberDecimal"
+                                    android:backgroundTint="@color/converde" />
+
+                                <Spinner
+                                    android:id="@+id/spnPotencia"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:backgroundTint="@color/converde" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="10dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/baseline_access_time_filled_24"
+                                android:layout_margin="5dp"
+                                android:id="@+id/imageView2"
+                                android:contentDescription="tiempo" />
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tiempo (al mes)"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_margin="5dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center">
+
+                                <EditText
+                                    android:id="@+id/edtDias"
+                                    android:layout_width="30dp"
+                                    android:layout_height="48dp"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:backgroundTint="@color/converde"
+                                    android:hint="0" />
+
+                                <TextView
+                                    android:id="@+id/textViewD"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="d"
+                                    android:layout_marginEnd="5dp"
+                                    android:textColor="@color/black" />
+
+                                <EditText
+                                    android:id="@+id/edtHoras"
+                                    android:layout_width="30dp"
+                                    android:layout_height="48dp"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:backgroundTint="@color/converde"
+                                    android:hint="0" />
+
+                                <TextView
+                                    android:id="@+id/textViewH"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="h"
+                                    android:layout_marginEnd="5dp"
+                                    android:textColor="@color/black" />
+
+                                <EditText
+                                    android:id="@+id/edtMinutos"
+                                    android:layout_width="30dp"
+                                    android:layout_height="48dp"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:backgroundTint="@color/converde"
+                                    android:hint="0" />
+
+                                <TextView
+                                    android:id="@+id/textViewM"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="min"
+                                    android:textColor="@color/black" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/baseline_electric_meter_24"
+                                android:layout_margin="5dp"
+                                android:id="@+id/imageView3"
+                                android:contentDescription="consumo" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consumo de energía"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_margin="5dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center">
+
+                                <EditText
+                                    android:id="@+id/edtConsumo"
+                                    android:layout_width="100dp"
+                                    android:layout_height="48dp"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:hint="0"
+                                    android:backgroundTint="@color/converde" />
+
+                                <TextView
+                                    android:id="@+id/textView4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="kW/h"
+                                    android:textColor="@color/black" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="10dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/baseline_format_list_numbered_24"
+                                android:layout_margin="5dp"
+                                android:id="@+id/imageViewA"
+                                android:contentDescription="cantidad" />
+
+                            <TextView
+                                android:id="@+id/textViewA"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cantidad"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_margin="5dp" />
+
+                            <EditText
+                                android:id="@+id/edtCantidad"
+                                android:layout_width="100dp"
+                                android:layout_height="48dp"
+                                android:layout_marginVertical="5dp"
+                                android:ems="10"
+                                android:inputType="number"
+                                android:hint="0"
+                                android:backgroundTint="@color/converde" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/baseline_price_change_24"
+                                android:layout_margin="5dp"
+                                android:id="@+id/imageView4"
+                                android:contentDescription="precio" />
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Precio unit."
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_margin="5dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center">
+
+                                <EditText
+                                    android:id="@+id/edtPrecio"
+                                    android:layout_width="80dp"
+                                    android:layout_height="48dp"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:backgroundTint="@color/converde"
+                                    android:hint="0.00" />
+
+                                <TextView
+                                    android:id="@+id/textView6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="soles×kW/h"
+                                    android:textColor="@color/black" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="10dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/baseline_wallet_24"
+                                android:layout_margin="5dp"
+                                android:id="@+id/imageView5"
+                                android:contentDescription="total" />
+
+                            <TextView
+                                android:id="@+id/textView7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total a pagar"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_margin="5dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginVertical="5dp"
+                                android:gravity="center">
+
+                                <EditText
+                                    android:id="@+id/edtTotal"
+                                    android:layout_width="100dp"
+                                    android:layout_height="48dp"
+                                    android:ems="10"
+                                    android:inputType="numberDecimal"
+                                    android:enabled="false"
+                                    android:hint="——" />
+
+                                <TextView
+                                    android:id="@+id/textView8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="soles"
+                                    android:textColor="@color/black" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <Button
+                    android:id="@+id/btnAgregar"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/AZUL"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:text="AGREGAR" />
+
+                <Button
+                    android:id="@+id/btnLimpiar"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LIMPIAR"
+                    android:backgroundTint="@color/ROJO"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+                <ListView
+                    android:id="@+id/listviewEtiquetas"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp">
+
+
+
+                </ListView>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
