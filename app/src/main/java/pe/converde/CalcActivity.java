@@ -195,11 +195,9 @@ public class CalcActivity extends AppCompatActivity {
             builder.setTitle("Buscar artefacto");
             builder.setMessage("Lista de artefactos disponibles:");
             builder.setIcon(R.drawable.baseline_emoji_objects_24);
-            //builder.setAdapter()
+            //builder.setItems()
             builder.show();
         });
-
-
     }
 
     public void funcion() {

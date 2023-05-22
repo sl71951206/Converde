@@ -25,5 +25,4 @@ public class BackActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
 }
